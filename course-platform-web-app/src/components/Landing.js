@@ -18,15 +18,12 @@ import LanguagesDropdown from "./LanguagesDropdown";
 import Command from "./Command";
 
 
-const javascriptDefault = `
-//data to use:
-base = 20;
-height = 10;
-
+const startingCode = `
+numberOfYearsPersonLived = 100
 `;
 
 const Landing = () => {
-  const [code, setCode] = useState(javascriptDefault);
+  const [code, setCode] = useState(startingCode);
   const [customInput, setCustomInput] = useState("");
   const [outputDetails, setOutputDetails] = useState(null);
   const [processing, setProcessing] = useState(null);

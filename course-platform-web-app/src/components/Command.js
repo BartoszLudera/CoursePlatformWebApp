@@ -7,7 +7,7 @@ const Command = () => {
                 Command with your exercise
             </h1>
             <div className="w-full h-auto bg-whtie rounded-md text-[#1e293b] font-normal text-sm overflow-y-auto mb-6">
-                Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
+            Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years.
             </div>
         </>
     );

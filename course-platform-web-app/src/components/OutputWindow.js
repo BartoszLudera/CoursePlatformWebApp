@@ -43,8 +43,8 @@ const OutputWindow = ({ outputDetails }) => {
       <div className="w-full h-56 bg-[#1e293b] rounded-md text-white font-normal text-sm overflow-y-auto">
         {outputDetails ? getOutput() : null}
       </div>
-      <div>
-        {textOut === 'dupa' ? 'git' : 'chuja'}
+      <div className="font-bold text-xl">
+        {textOut === '3153600000' ? 'Nice! The output is correct' : ''}
       </div>
     </>
   );

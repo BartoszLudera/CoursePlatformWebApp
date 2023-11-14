@@ -1,0 +1,8 @@
+Command:
+Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
+
+Start Code:
+numberOfYearsPersonLived = 100
+
+CorrectOutput:
+3153600000
