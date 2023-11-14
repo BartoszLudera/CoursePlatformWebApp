@@ -1,6 +1,8 @@
 import React from "react";
 
 const OutputWindow = ({ outputDetails }) => {
+  let textOut='';
+
   const getOutput = () => {
     let statusId = outputDetails?.status?.id;
 
@@ -12,11 +14,10 @@ const OutputWindow = ({ outputDetails }) => {
         </pre>
       );
     } else if (statusId === 3) {
+      textOut = atob(outputDetails.stdout).replace(/\n/g, ''); // Remove newline characters
       return (
         <pre className="px-2 py-1 font-normal text-xs text-green-500">
-          {atob(outputDetails.stdout) !== null
-            ? `${atob(outputDetails.stdout)}`
-            : null}
+          {textOut}
         </pre>
       );
     } else if (statusId === 5) {
@@ -33,14 +34,17 @@ const OutputWindow = ({ outputDetails }) => {
       );
     }
   };
+
   return (
     <>
       <h1 className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 mb-2">
         Output
       </h1>
-      {/* zmiana okna output */}
       <div className="w-full h-56 bg-[#1e293b] rounded-md text-white font-normal text-sm overflow-y-auto">
-        {outputDetails ? <>{getOutput()}</> : null}
+        {outputDetails ? getOutput() : null}
+      </div>
+      <div>
+        {textOut === 'dupa' ? 'git' : 'chuja'}
       </div>
     </>
   );
