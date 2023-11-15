@@ -17,10 +17,10 @@ import ThemeDropdown from "./ThemeDropdown";
 import LanguagesDropdown from "./LanguagesDropdown";
 import Command from "./Command";
 
+import { task } from './Task'
 
-const startingCode = `
-numberOfYearsPersonLived = 100
-`;
+
+const startingCode = task[taskNumber].stat_code;
 
 const Landing = () => {
   const [code, setCode] = useState(startingCode);
@@ -30,8 +30,14 @@ const Landing = () => {
   const [theme, setTheme] = useState("cobalt");
   const [language, setLanguage] = useState(languageOptions[0]);
 
+  const [taskNumber, setTaskNumber] = useState(0)
+
   const enterPress = useKeyPress("Enter");
   const ctrlPress = useKeyPress("Control");
+
+  const taskHandler = () =>{
+    setTaskNumber(taskNumber+1);
+  };
 
   const onSelectChange = (sl) => {
     console.log("selected Option...", sl);
@@ -217,6 +223,8 @@ const Landing = () => {
           </div>
           {outputDetails && <OutputDetails outputDetails={outputDetails} />}
         </div>
+          <button className=" border-2 hover:border-green-800" onClick={taskHandler}>Next task</button>
+          <p>{taskNumber}</p>
       </div>
     </>
   );

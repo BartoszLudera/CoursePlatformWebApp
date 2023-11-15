@@ -1,5 +1,8 @@
 import React from "react";
 
+import { task } from './Task'
+
+
 const OutputWindow = ({ outputDetails }) => {
   let textOut='';
 
@@ -44,7 +47,7 @@ const OutputWindow = ({ outputDetails }) => {
         {outputDetails ? getOutput() : null}
       </div>
       <div className="font-bold text-xl">
-        {textOut === '3153600000' ? 'Nice! The output is correct' : ''}
+        {textOut === task[0].correct_output ? 'Nice! The output is correct' : ''}
       </div>
     </>
   );
